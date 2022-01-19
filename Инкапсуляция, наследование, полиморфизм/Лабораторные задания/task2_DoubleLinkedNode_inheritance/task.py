@@ -43,7 +43,7 @@ class DoubleLinkedNode(Node):
         return f"{self.__class__.__name__}(value, next_, prev)"
 
     def __str__(self):
-
+        self.prev = str.__str__
     # TODO getter и setter для prev
 
     @property
