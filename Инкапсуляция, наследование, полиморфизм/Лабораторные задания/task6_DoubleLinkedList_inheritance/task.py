@@ -69,4 +69,33 @@ class LinkedList:
         return f"{self.to_list()}"
 
 
+# def remove(self, index):
+    #     if self.head is None:
+    #         print("В списке нет элемента для удаления")
+    #         return
+    #     if self.head.next is None:
+    #         if self.head.value == index:
+    #             self.head = None
+    #         else:
+    #             print("Элемент не найден")
+    #         return
+    #     if self.head.value == index:
+    #         self.head = self.head.next
+    #         self.head.prev = None
+    #         return
+    #
+    #     node = self.head
+    #     while node.next is not None:
+    #         if node.value == index:
+    #             break
+    #         node = node.next
+    #     if node.next is not None:
+    #         node.prev.next = node.next
+    #         node.next.prev = node.prev
+    #     else:
+    #         if node.value == index:
+    #             node.prev.next = None
+    #         else:
+    #             print("Элемент не найден")
+
 # TODO Реализовать класс DoubleLinkedList

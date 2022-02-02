@@ -1,6 +1,7 @@
 from typing import Any, Iterable, Optional
 from collections.abc import MutableSequence
-from node import Node
+from node import Node, DoubleLinkedNode
+
 
 class LinkedList(MutableSequence):
     node_class = Node
@@ -29,7 +30,7 @@ class LinkedList(MutableSequence):
         if not isinstance(index, int):
             raise TypeError()
 
-        if not 0 <= index < self.len:  # для for
+        if not 0 <= index < self.len:
             raise IndexError()
 
         current_node = self.head
@@ -47,38 +48,11 @@ class LinkedList(MutableSequence):
         return node.value
 
     def __setitem__(self, value, index):
-        """ Метод устанавливает значение узла по указанному индексу. """
         node = self.step_by_step_on_nodes(index)
         node.value = value
 
-    def __delitem__(self, index):
-        if self.head is None:
-            print("В списке нет элемента для удаления")
-            return
-        if self.head.next is None:
-            if self.head.value == index:
-                self.head = None
-            else:
-                print("Элемент не найден")
-            return
-        if self.head.value == index:
-            self.head = self.head.next
-            self.head.prev = None
-            return
-
-        node = self.head
-        while node.next is not None:
-            if node.value == index:
-                break
-            node = node.next
-        if node.next is not None:
-            node.prev.next = node.next
-            node.next.prev = node.prev
-        else:
-            if node.value == index:
-                node.prev.next = None
-            else:
-                print("Элемент не найден")
+    def __delitem__(self, key):
+        del self.__dict__[key]
 
     def __len__(self) -> int:
         return self.len
@@ -103,7 +77,7 @@ class LinkedList(MutableSequence):
                     break
                 node = node.next
             if node is None:
-                print("item not in the list")
+                print("Элемента нет в списке")
             else:
                 new_node = Node(value)
                 new_node.prev = node
@@ -112,11 +86,34 @@ class LinkedList(MutableSequence):
                     node.next.prev = new_node
                 node.next = new_node
 
-
+    def remove(self, remove_value: Any) -> None:
+        """
+        1. Через enumerate от self получать пару индекс-значение. Описать через какой магический метод работает for ... in ...
+        2. Через встроенную функцию del удалить по индексу элемент. Разобраться как работает магический метод
+        3. Написать тесты
+        :param remove_value:
+        :return:
+        """
+        ...
 
 class DoubleLinkedList(LinkedList):
-    ...
+    node_class = DoubleLinkedNode
+
+    @staticmethod
+    def linked_nodes(left_node: Node, right_node: Optional[Node] = None) -> None:
+        left_node.next = right_node
+        right_node.prev = left_node
 
 
 if __name__ == "__main__":
-    ll = LinkedList
+    ll1 = LinkedList([1, 2, 3, 4, 5])
+    ll1.append(6)
+    ll1.insert(3, 77)
+    ll1.step_by_step_on_nodes(4)
+    print(ll1)
+
+    ll2 = DoubleLinkedList([1, 2, 3])
+    ll2.append(6)
+    ll2.append(1)
+    ll2.insert(6, 777)
+    print(ll2)

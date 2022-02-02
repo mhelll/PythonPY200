@@ -1,5 +1,6 @@
 from typing import Any, Optional
 
+
 class Node:
     def __init__(self, value: Any, next_: Optional["Node"] = None):
         self.value = value
@@ -35,7 +36,7 @@ class DoubleLinkedNode(Node):
         prev = str(None) if self.prev is None else f"{self.__class__.__name__}({self.prev.value}), None, None"
         return f"{self.__class__.__name__}, {next_, prev}"
 
-    def __str__(self) -> str:
+    def __str__(self):
         self.prev = str.__str__
 
     @property
