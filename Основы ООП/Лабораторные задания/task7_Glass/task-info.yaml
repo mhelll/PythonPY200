@@ -1,17 +1,22 @@
 type: output
 files:
+- name: tests/output.txt
+  visible: false
+  text: |
+    200 100
+  learner_created: false
 - name: task.py
   visible: true
   placeholders:
   - offset: 27
-    length: 898
+    length: 27
     placeholder_text: '# TODO  создать класс Glass'
     initial_state:
       length: 27
       offset: 27
     initialized_from_dependency: false
-    selected: true
-    status: Solved
+    selected: false
+    status: Unchecked
     encrypted_possible_answer: |-
       class Glass:
           def __init__(self, capacity_volume: Union[int, float], occupied_volume: Union[int, float]):
@@ -48,13 +53,5 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-- name: tests/output.txt
-  visible: false
-  text: |
-    200 100
-  learner_created: false
-status: Solved
-feedback:
-  message: Congratulations!
-  time: Wed, 22 Dec 2021 17:37:01 UTC
+status: Unchecked
 record: -1

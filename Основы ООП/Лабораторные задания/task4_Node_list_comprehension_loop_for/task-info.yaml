@@ -1,8 +1,5 @@
 type: output
 files:
-- name: __init__.py
-  visible: false
-  learner_created: false
 - name: tests/output.txt
   visible: false
   text: |
@@ -18,29 +15,32 @@ files:
     8
     9
   learner_created: false
+- name: __init__.py
+  visible: false
+  learner_created: false
 - name: main.py
   visible: true
   placeholders:
   - offset: 544
-    length: 113
+    length: 85
     placeholder_text: '...  # TODO с помощью list comprehension сделать список узлов
       со значениями от 0 до 9'
     initial_state:
       length: 85
       offset: 544
     initialized_from_dependency: false
-    selected: true
-    status: Solved
+    selected: false
+    status: Unchecked
     encrypted_possible_answer: '[Node(value) for value in range(10)]'
-  - offset: 709
-    length: 58
+  - offset: 657
+    length: 33
     placeholder_text: '# TODO распечатать значения узлов'
     initial_state:
       length: 33
       offset: 657
     initialized_from_dependency: false
-    selected: true
-    status: Solved
+    selected: false
+    status: Unchecked
     encrypted_possible_answer: |-
       for node in list_nodes:
               print(node.value)
@@ -70,8 +70,5 @@ files:
 
         # TODO распечатать значения узлов
   learner_created: false
-status: Solved
-feedback:
-  message: Congratulations!
-  time: Wed, 22 Dec 2021 16:59:07 UTC
+status: Unchecked
 record: -1

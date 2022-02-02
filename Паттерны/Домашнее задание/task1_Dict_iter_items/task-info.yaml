@@ -1,5 +1,12 @@
 type: output
 files:
+- name: tests/output.txt
+  visible: false
+  text: |
+    1 a
+    2 b
+    3 c
+  learner_created: false
 - name: main.py
   visible: true
   placeholders:
@@ -44,13 +51,6 @@ files:
   learner_created: false
 - name: __init__.py
   visible: false
-  learner_created: false
-- name: tests/output.txt
-  visible: false
-  text: |
-    1 a
-    2 b
-    3 c
   learner_created: false
 status: Unchecked
 record: -1

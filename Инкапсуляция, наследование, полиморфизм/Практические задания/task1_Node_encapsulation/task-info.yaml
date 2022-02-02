@@ -1,20 +1,25 @@
 type: output
 files:
+- name: tests/output.txt
+  visible: false
+  text: |
+    Node(first_node, Node(second_node)) Node(second_node, None)
+  learner_created: false
 - name: main.py
   visible: true
   placeholders:
   - offset: 399
-    length: 46
+    length: 44
     placeholder_text: 'self.next = None  # TODO заменить на private'
     initial_state:
       length: 44
       offset: 399
     initialized_from_dependency: false
-    selected: true
+    selected: false
     status: Solved
     encrypted_possible_answer: self.__next = None
-  - offset: 522
-    length: 128
+  - offset: 520
+    length: 124
     placeholder_text: 'f"Node({self.value}, {None})" if self.next is None else f"Node({self.value},
       Node({self.next}))"  # TODO заменить на private'
     initial_state:
@@ -25,8 +30,8 @@ files:
     status: Solved
     encrypted_possible_answer: f"Node({self.value}, {None})" if self.__next is None
       else f"Node({self.value}, Node({self.__next}))"
-  - offset: 940
-    length: 47
+  - offset: 934
+    length: 45
     placeholder_text: 'self.next = next_  # TODO заменить на private'
     initial_state:
       length: 45
@@ -79,13 +84,8 @@ files:
 - name: __init__.py
   visible: false
   learner_created: false
-- name: tests/output.txt
-  visible: false
-  text: |
-    Node(first_node, Node(second_node)) Node(second_node, None)
-  learner_created: false
 status: Solved
 feedback:
   message: Congratulations!
-  time: Fri, 14 Jan 2022 16:11:49 UTC
+  time: Wed, 26 Jan 2022 13:45:24 UTC
 record: -1

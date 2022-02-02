@@ -1,27 +1,37 @@
 type: output
 files:
+- name: tests/output.txt
+  visible: false
+  text: |
+    Вызван метод "__del__"
+    Вызван метод "__del__"
+    Вызван метод "__del__"
+    Вызван метод "__del__"
+    Вызван метод "__del__"
+    []
+  learner_created: false
 - name: main.py
   visible: true
   placeholders:
   - offset: 351
-    length: 43
+    length: 76
     placeholder_text: 'self._prev  # TODO объект теперь вызываемый'
     initial_state:
       length: 43
       offset: 351
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Solved
     encrypted_possible_answer: self._prev()
-  - offset: 493
-    length: 47
+  - offset: 526
+    length: 86
     placeholder_text: 'self._prev = prev  # TODO сделать слабую ссылку'
     initial_state:
       length: 47
       offset: 493
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Solved
     encrypted_possible_answer: self._prev = None if prev is None else weakref.ref(prev)
   text: |
     from typing import Any, Optional
@@ -80,16 +90,6 @@ files:
   learner_created: false
 - name: __init__.py
   visible: false
-  learner_created: false
-- name: tests/output.txt
-  visible: false
-  text: |
-    Вызван метод "__del__"
-    Вызван метод "__del__"
-    Вызван метод "__del__"
-    Вызван метод "__del__"
-    Вызван метод "__del__"
-    []
   learner_created: false
 - name: node.py
   visible: true
@@ -228,5 +228,8 @@ files:
         ll.append(100)
         print(ll)
   learner_created: false
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Tue, 01 Feb 2022 22:08:16 UTC
 record: -1
